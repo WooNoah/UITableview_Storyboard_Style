@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1611" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Wvw-UA-QC7">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MVX-0X-lV2"/>
+                        <viewControllerLayoutGuide type="bottom" id="1i9-Lq-REu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T4A-rc-DiW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3i7-8S-MzB">
+                                <rect key="frame" x="51.5" y="234.5" width="271" height="30"/>
+                                <state key="normal" title="创建UITableviewController的storyboard"/>
+                                <connections>
+                                    <action selector="click1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qtr-Uo-7eP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRz-OD-QcQ">
+                                <rect key="frame" x="35" y="318.5" width="305" height="30"/>
+                                <state key="normal" title="创建UIViewController内部带有tableview的sb"/>
+                                <connections>
+                                    <action selector="click2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="28R-WW-q8X"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RRz-OD-QcQ" firstAttribute="centerX" secondItem="T4A-rc-DiW" secondAttribute="centerX" id="5DQ-pi-PfY"/>
+                            <constraint firstItem="3i7-8S-MzB" firstAttribute="centerX" secondItem="T4A-rc-DiW" secondAttribute="centerX" id="BsB-W8-Nn9"/>
+                            <constraint firstItem="RRz-OD-QcQ" firstAttribute="centerY" secondItem="T4A-rc-DiW" secondAttribute="centerY" id="GfM-kB-0d7"/>
+                            <constraint firstItem="RRz-OD-QcQ" firstAttribute="top" secondItem="3i7-8S-MzB" secondAttribute="bottom" constant="54" id="KDo-3c-54j"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="oOf-WM-vP7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="972" y="37.331334332833585"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CeU-3P-Bpt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wvw-UA-QC7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vzz-S1-P5x">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="O9Z-mg-ISQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FDR-y0-Mbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="21.600000000000001" y="691.304347826087"/>
+        </scene>
+    </scenes>
+</document>
