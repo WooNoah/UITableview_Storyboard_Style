@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -35,6 +36,13 @@
                                     <action selector="click2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="28R-WW-q8X"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8L-2V-6w9">
+                                <rect key="frame" x="77.5" y="412" width="220" height="30"/>
+                                <state key="normal" title="使用storyboard创建UIScrollview"/>
+                                <connections>
+                                    <segue destination="siC-CE-vsT" kind="push" id="fuf-8K-9u2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -42,6 +50,8 @@
                             <constraint firstItem="3i7-8S-MzB" firstAttribute="centerX" secondItem="T4A-rc-DiW" secondAttribute="centerX" id="BsB-W8-Nn9"/>
                             <constraint firstItem="RRz-OD-QcQ" firstAttribute="centerY" secondItem="T4A-rc-DiW" secondAttribute="centerY" id="GfM-kB-0d7"/>
                             <constraint firstItem="RRz-OD-QcQ" firstAttribute="top" secondItem="3i7-8S-MzB" secondAttribute="bottom" constant="54" id="KDo-3c-54j"/>
+                            <constraint firstItem="S8L-2V-6w9" firstAttribute="centerX" secondItem="RRz-OD-QcQ" secondAttribute="centerX" id="NE9-Ag-aGp"/>
+                            <constraint firstItem="S8L-2V-6w9" firstAttribute="top" secondItem="RRz-OD-QcQ" secondAttribute="bottom" constant="63.5" id="qHi-KS-d31"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oOf-WM-vP7"/>
@@ -49,6 +59,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="972" y="37.331334332833585"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="GPd-w4-qqQ">
+            <objects>
+                <viewController id="siC-CE-vsT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UAM-mP-paR"/>
+                        <viewControllerLayoutGuide type="bottom" id="A2y-HG-etP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ebK-5V-JZI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ni8-fh-1eE">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bvo-KH-bFW" userLabel="content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="342" height="1000"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKz-JS-aYy">
+                                                <rect key="frame" x="20" y="20" width="302" height="770"/>
+                                                <mutableString key="text">1、若是storyboard，则拖入一个viewcontroller，（xib则默认就是当前viewcontroller）==================================================================================================================================================================================================================================== 2、拖入一个scrollview，设置约束为想要的大小（类似代码中设置scrollview的frame）====================================== ====================================================================================================================================================================================================================================  3、在scrollview中拖入一个UIView,此view为scrollview的contentview，即设置他的大小相当于代码中设置contentSize======================================================================================================================================================== 4、我们在代码中设置contentSize是会根据他的值来判断scrollview的滚动方向的，而在sb中则不会，需要我们自己设定滚动方向，此处以横向滚动为例：======================================1)先设置contentView的四个边和scrollview的齐平，======================================2)设置contentView在scrollview中竖直居中，======================================3)给在滚动方向，此处为横向，一个固定的长度即可</mutableString>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="tKz-JS-aYy" firstAttribute="leading" secondItem="bvo-KH-bFW" secondAttribute="leading" constant="20" id="1fS-SM-gws"/>
+                                            <constraint firstAttribute="height" constant="1000" id="7Xu-AN-AJL"/>
+                                            <constraint firstItem="tKz-JS-aYy" firstAttribute="centerX" secondItem="bvo-KH-bFW" secondAttribute="centerX" id="8X7-aT-Xx8"/>
+                                            <constraint firstItem="tKz-JS-aYy" firstAttribute="top" secondItem="bvo-KH-bFW" secondAttribute="top" constant="20" id="LLs-UY-ukY"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="bvo-KH-bFW" firstAttribute="top" secondItem="Ni8-fh-1eE" secondAttribute="top" id="1n6-3b-ehe"/>
+                                    <constraint firstAttribute="bottom" secondItem="bvo-KH-bFW" secondAttribute="bottom" id="H7f-fn-jO6"/>
+                                    <constraint firstItem="bvo-KH-bFW" firstAttribute="leading" secondItem="Ni8-fh-1eE" secondAttribute="leading" id="ZTK-ta-AkK"/>
+                                    <constraint firstAttribute="trailing" secondItem="bvo-KH-bFW" secondAttribute="trailing" id="dNN-lJ-9NO"/>
+                                    <constraint firstItem="bvo-KH-bFW" firstAttribute="centerX" secondItem="Ni8-fh-1eE" secondAttribute="centerX" id="sBI-Mq-0JK"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ni8-fh-1eE" secondAttribute="trailing" id="3Pe-Iw-cZD"/>
+                            <constraint firstItem="Ni8-fh-1eE" firstAttribute="top" secondItem="UAM-mP-paR" secondAttribute="bottom" id="Zd2-oc-5Pt"/>
+                            <constraint firstItem="A2y-HG-etP" firstAttribute="top" secondItem="Ni8-fh-1eE" secondAttribute="bottom" id="gAD-8O-Xan"/>
+                            <constraint firstItem="Ni8-fh-1eE" firstAttribute="leading" secondItem="ebK-5V-JZI" secondAttribute="leadingMargin" id="xS0-vq-f3c"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="UQ0-75-Xup"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iot-vC-hdx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1842.4000000000001" y="37.331334332833585"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CeU-3P-Bpt">
